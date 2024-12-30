@@ -200,7 +200,7 @@ function createFacultyCard(faculty) {
                     <i class="fas fa-star"></i>
                 </div>
                 <img src="${faculty.image}" alt="${faculty.name}" class="faculty-image">
-                <h3 class="faculty-faculty-name">${faculty.name}</h3>
+                <h3 class="faculty-name">${faculty.name}</h3>
                 <p class="faculty-position">${faculty.position}</p>
             </div>
             <div class="faculty-card-body">

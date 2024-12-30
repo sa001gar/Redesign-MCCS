@@ -3,7 +3,7 @@
     --primary-light: #534bae;
     --accent: #ffd700;
     --text-light: #ffffff;
-    --text-muted: #b0bec5;
+    --text-muted: #fee6ff;
 }
 
 * {
@@ -14,7 +14,8 @@
 }
 
 .footer {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    /* background: linear-gradient(135deg, var(--primary-dark), var(--primary-light)); */
+    background: linear-gradient(to right, #8d0486, #e95783);
     color: var(--text-light);
     padding: 4rem 0;
     position: relative;
@@ -65,12 +66,12 @@
     margin-bottom: 1.5rem;
 }
 
-.social-links {
+.footer-social-links {
     display: flex;
     gap: 1rem;
 }
 
-.social-links a {
+.footer-social-links a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -83,7 +84,7 @@
     transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+.footer-social-links a:hover {
     background: var(--accent);
     color: var(--primary-dark);
     transform: translateY(-3px);

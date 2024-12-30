@@ -7,8 +7,14 @@
 }
 
 :root {
-    --gradient: linear-gradient(to right, #8d0486, #e95783);
-    --primary: #8d0486;
+    /* --gradient: linear-gradient(to right, #8d0486, #e95783); */
+    
+    
+    --gradient: linear-gradient(to right, #5f0723, #e95783);
+    /* --gradient: linear-gradient(135deg, #1a237e, #534bae); */
+    /* --primary: #8d0486; */
+    --primary: #5f0723;
+    /* --secondary: #e95783; */
     --secondary: #e95783;
     --white: #ffffff;
     --gray-100: #f3f4f6;
@@ -168,6 +174,7 @@ body {
 
 .faculty-name {
     color: var(--white);
+    /* color: white; */
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
