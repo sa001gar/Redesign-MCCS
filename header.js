@@ -86,4 +86,17 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+
+  const navbar = document.querySelector(".navbar");
+  const navbarOffsetTop = navbar.offsetTop;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= navbarOffsetTop) {
+      navbar.classList.add("fixed");
+    } else {
+      navbar.classList.remove("fixed");
+    }
+  });
 });
+
+
