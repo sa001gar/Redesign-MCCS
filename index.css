@@ -609,9 +609,7 @@ body {
 .contact_section {
     position: relative;
     min-height: 300px;
-    background-image: url('https://computersciencemancoll.in/images/background/bg3.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color: var(--text-light);
     overflow: hidden;
 }
