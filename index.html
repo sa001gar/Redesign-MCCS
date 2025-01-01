@@ -6,10 +6,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="/footer/footer.css">
+    <!-- ===== Link Swiper's CSS ===== -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- ===== Fontawesome CDN Link ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <!-- <link rel="stylesheet" href="alumni.css"> -->
-
-    <!-- Font Awesome Icons  -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header  -->
@@ -17,7 +18,7 @@
         <div class="main-header">
             <div class="header-container">
                 <div class="logo">
-                    <img src="image.png" alt="College Logo">
+                    <img src="https://via.placeholder.com/60" alt="College Logo">
                     <div class="college-name">
                         <h1>DEPARTMENT OF COMPUTER SCIENCE</h1>
                         <p>Residing Mankar College | Affiliated to Burdwan University | NAAC Accredited</p>
@@ -170,102 +171,233 @@
 
 <!-- end Home  -->
 
-<!-- Alumni Section   -->
 
-<section class="alumni-section">
-    <div class="alumni-container">
-      <div class="alumni-slider">
-        <div class="alumni-cards">
-          <!-- Alumni Card 1 -->
-          <div class="alumni-card">
-            <div class="alumni-card__content">
-              <div class="alumni-card__image">
-                <img src="https://computersciencemancoll.in/admin/alumniimg/sudip.jpg" alt="Sudip Mondal">
-              </div>
-              <div class="alumni-card__social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
-              <h3 class="alumni-card__name">Sudip Mondal</h3>
-              <span class="alumni-card__year">2017-18</span>
-              <span class="alumni-card__position">PHP Developer</span>
-              <span class="alumni-card__company">SAAMSA Solutions pvt lt</span>
-              <div class="alumni-card__buttons">
-                <button class="alumni-card__btn">About Me</button>
-                <button class="alumni-card__btn">Contact Me</button>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Alumni Card 2 -->
-          <div class="alumni-card">
-            <div class="alumni-card__content">
-              <div class="alumni-card__image">
-                <img src="path/to/sourav.jpg" alt="Sourav Hazra">
-              </div>
-              <div class="alumni-card__social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
-              <h3 class="alumni-card__name">Sourav Hazra</h3>
-              <span class="alumni-card__year">2017-18</span>
-              <span class="alumni-card__position">Web Developer</span>
-              <span class="alumni-card__company">SAAMSA Solutions pvt lt</span>
-              <div class="alumni-card__buttons">
-                <button class="alumni-card__btn">About Me</button>
-                <button class="alumni-card__btn">Contact Me</button>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Alumni Card 3 -->
-          <div class="alumni-card">
-            <div class="alumni-card__content">
-              <div class="alumni-card__image">
-                <img src="path/to/anuvab.jpg" alt="Anuvab Goswami">
-              </div>
-              <div class="alumni-card__social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
-              <h3 class="alumni-card__name">Anuvab Goswami</h3>
-              <span class="alumni-card__year">2017-18</span>
-              <span class="alumni-card__position">Web Developer</span>
-              <span class="alumni-card__company">SAAMSA Solutions pvt lt</span>
-              <div class="alumni-card__buttons">
-                <button class="alumni-card__btn">About Me</button>
-                <button class="alumni-card__btn">Contact Me</button>
-              </div>
-            </div>
-          </div>
+<!-- Contact Section  -->
+<section class="contact_section">
+    <div class="contact_overlay"></div>
+    <div class="contact_container">
+        <div class="contact_content">
+            <p class="contact_subtitle">
+                <i class="fas fa-headset contact_icon pulse"></i>
+                For Online Contact Please Call Us Today
+            </p>
+            <h1 class="contact_title">
+                Get Early Contact to <span class="highlight">Our Department</span>
+            </h1>
         </div>
-  
-        <button class="slider-nav slider-nav--prev">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="slider-nav slider-nav--next">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-  
-        <div class="slider-dots">
-          <span class="slider-dot active"></span>
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
-          <span class="slider-dot"></span>
-        </div>
-      </div>
+        <a href="https://wa.me/your-number" class="whatsapp_button">
+            <i class="fab fa-whatsapp"></i>
+            Join To WhatsApp
+        </a>
     </div>
+</section>
+<!-- End Contact Section  -->
+
+
+<!-- Alumni Section   -->
+<div class="alumni_container">
+  <section class="alumni_section">
+  <!-- Swiper container -->
+  <div class="swiper mySwiper alumni_swiper">
+      <div class="swiper-wrapper alumni_content">
+      
+      <!-- Swiper slide item 1 -->
+      <div class="swiper-slide alumni_card">
+          <div class="alumni_card_content">
+          <!-- Profile image -->
+          <div class="alumni_image">
+              <img src="https://computersciencemancoll.in/admin/alumniimg/sudip.jpg" alt="Profile Image 1" />
+          </div>
+  
+          <!-- Social media icons -->
+          <div class="alumni_media_icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-github"></i>
+          </div>
+  
+          <!-- Name and profession -->
+          <div class="alumni_name_profession">
+              <span class="alumni_name">Sudip Mondal</span>
+              <span class="alumni_year">2017-18</span>
+              <span class="alumni_profession">PHP Developer</span>
+              <span class="alumni_company">SAAMSA Solutions pvt lt</span>
+          </div>
+  
+          <!-- Buttons -->
+          <div class="alumni_button">
+              <button class="alumni_about_me">About Me</button>
+              <button class="alumni_contact_me">Contact Me</button>
+          </div>
+          </div>
+      </div>
+  
+      <!-- Swiper slide item 2 -->
+      <div class="swiper-slide alumni_card">
+          <div class="alumni_card_content">
+          <!-- Profile image -->
+          <div class="alumni_image">
+              <img src="https://computersciencemancoll.in/admin/alumniimg/my.jpg" alt="Profile Image 2" />
+          </div>
+  
+          <!-- Social media icons -->
+          <div class="alumni_media_icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-github"></i>
+          </div>
+  
+          <!-- Name and profession -->
+          <div class="alumni_name_profession">
+              <span class="alumni_name">Sourav Hazra</span>
+              <span class="alumni_year">2017-18</span>
+              <span class="alumni_profession">Web Developer</span>
+              <span class="alumni_company">SAAMSA Solutions pvt lt</span>
+          </div>
+  
+          <!-- Buttons -->
+          <div class="alumni_button">
+              <button class="alumni_about_me">About Me</button>
+              <button class="alumni_contact_me">Contact Me</button>
+          </div>
+          </div>
+      </div>
+  
+      <!-- Swiper slide item 3 -->
+      <div class="swiper-slide alumni_card">
+          <div class="alumni_card_content">
+          <!-- Profile image -->
+          <div class="alumni_image">
+              <img src="https://computersciencemancoll.in/admin/alumniimg/1693938728-IMG-20230906-WA0000.jpg" alt="Profile Image 3" />
+          </div>
+  
+          <!-- Social media icons -->
+          <div class="alumni_media_icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-github"></i>
+          </div>
+  
+          <!-- Name and profession -->
+          <div class="alumni_name_profession">
+              <span class="alumni_name">Anuvab Goswami</span>
+              <span class="alumni_year">2017-18</span>
+              <span class="alumni_profession">Web Developer</span>
+              <span class="alumni_company">SAAMSA Solutions pvt lt</span>
+          </div>
+  
+          <!-- Buttons -->
+          <div class="alumni_button">
+              <button class="alumni_about_me">About Me</button>
+              <button class="alumni_contact_me">Contact Me</button>
+          </div>
+          </div>
+      </div>
+  
+      <!-- Swiper slide item 4 -->
+      <div class="swiper-slide alumni_card">
+          <div class="alumni_card_content">
+          <!-- Profile image -->
+          <div class="alumni_image">
+              <img src="https://computersciencemancoll.in/admin/alumniimg/1603075284-IMG_20201018_220202%20(1).jpg" alt="Profile Image 4" />
+          </div>
+  
+          <!-- Social media icons -->
+          <div class="alumni_media_icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-github"></i>
+          </div>
+  
+          <!-- Name and profession -->
+          <div class="alumni_name_profession">
+              <span class="alumni_name">Debika Das</span>
+              <span class="alumni_year">2017-18</span>
+              <span class="alumni_profession">Web Developer</span>
+              <span class="alumni_company">Cognizant</span>
+          </div>
+  
+          <!-- Buttons -->
+          <div class="alumni_button">
+              <button class="alumni_about_me">About Me</button>
+              <button class="alumni_contact_me">Contact Me</button>
+          </div>
+          </div>
+      </div>
+  
+      <!-- Swiper slide item 5 -->
+      <div class="swiper-slide alumni_card">
+          <div class="alumni_card_content">
+          <!-- Profile image -->
+          <div class="alumni_image">
+              <img src="https://computersciencemancoll.in/admin/alumniimg/1633157471-IMG-20211002-WA0014~2.jpg" alt="Profile Image 5" />
+          </div>
+  
+          <!-- Social media icons -->
+          <div class="alumni_media_icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-github"></i>
+          </div>
+  
+          <!-- Name and profession -->
+          <div class="alumni_name_profession">
+              <span class="alumni_name">Aditya Chatterjee</span>
+              <span class="alumni_year">2016-17</span>
+              <span class="alumni_profession">Web Developer</span>
+              <span class="alumni_company">TCS</span>
+          </div>
+  
+          <!-- Buttons -->
+          <div class="alumni_button">
+              <button class="alumni_about_me">About Me</button>
+              <button class="alumni_contact_me">Contact Me</button>
+          </div>
+          </div>
+      </div>
+  
+      <!-- Swiper slide item 6 -->
+      <div class="swiper-slide alumni_card">
+          <div class="alumni_card_content">
+          <!-- Profile image -->
+          <div class="alumni_image">
+              <img src="https://computersciencemancoll.in/admin/alumniimg/1732540608-sayan_jpg.jpg" alt="Profile Image 6" />
+          </div>
+  
+          <!-- Social media icons -->
+          <div class="alumni_media_icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-github"></i>
+          </div>
+  
+          <!-- Name and profession -->
+          <div class="alumni_name_profession">
+              <span class="alumni_name">Sayan Das</span>
+              <span class="alumni_year">2019-20</span>
+              <span class="alumni_profession">AWS Expert</span>
+              <span class="alumni_company">Affine</span>
+          </div>
+  
+          <!-- Buttons -->
+          <div class="alumni_button">
+              <button class="alumni_about_me">About Me</button>
+              <button class="alumni_contact_me">Contact Me</button>
+          </div>
+          </div>
+      </div>
+      
+      </div>
+  </div>
+  
+  <!-- Swiper navigation buttons -->
+  <div class="swiper-button-next alumni_swiper_button_next"></div>
+  <div class="swiper-button-prev alumni_swiper_button_prev"></div>
+  <div class="swiper-pagination alumni_swiper_pagination"></div>
   </section>
+  </div>
+  <!-- End Alumni Section  -->
   
-  
-
-
-    
-<!-- End Alumni Section   -->
 
 
 <!-- Footer Component  -->
@@ -319,95 +451,42 @@
 <script src="header.js"></script>
 <script src="hero.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-  const slider = document.querySelector('.alumni-cards');
-  const cards = document.querySelectorAll('.alumni-card');
-  const prevBtn = document.querySelector('.slider-nav--prev');
-  const nextBtn = document.querySelector('.slider-nav--next');
-  const dots = document.querySelectorAll('.slider-dot');
-  
-  let currentIndex = 0;
-  const cardWidth = cards[0].offsetWidth + 20; // Include gap
-  const maxIndex = cards.length - Math.floor(slider.offsetWidth / cardWidth);
+ <!-- Swiper JS -->
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-  // Initialize slider position
-  updateSlider();
+ <!-- Initialize Swiper -->
+ <script>
+ var swiper = new Swiper(".mySwiper", {
+     spaceBetween: 30,
+     grabCursor: true,
+     loop: true,
 
-  // Navigation buttons
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlider();
-    }
-  });
+     // Pagination
+     pagination: {
+     el: ".swiper-pagination",
+     clickable: true,
+     },
 
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < maxIndex) {
-      currentIndex++;
-      updateSlider();
-    }
-  });
+     // Next and previous navigation
+     navigation: {
+     nextEl: ".swiper-button-next",
+     prevEl: ".swiper-button-prev",
+     },
 
-  // Dot navigation
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      currentIndex = index;
-      updateSlider();
-    });
-  });
-
-  // Touch events for mobile
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  slider.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-  });
-
-  slider.addEventListener('touchmove', (e) => {
-    touchEndX = e.touches[0].clientX;
-  });
-
-  slider.addEventListener('touchend', () => {
-    const swipeDistance = touchStartX - touchEndX;
-    if (Math.abs(swipeDistance) > 50) { // Minimum swipe distance
-      if (swipeDistance > 0 && currentIndex < maxIndex) {
-        currentIndex++;
-      } else if (swipeDistance < 0 && currentIndex > 0) {
-        currentIndex--;
-      }
-      updateSlider();
-    }
-  });
-
-  function updateSlider() {
-    // Update slider position
-    slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    
-    // Update dots
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentIndex);
-    });
-    
-    // Update button states
-    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-    nextBtn.style.opacity = currentIndex === maxIndex ? '0.5' : '1';
-  }
-
-  // Update on window resize
-  window.addEventListener('resize', () => {
-    // Recalculate maxIndex
-    const newMaxIndex = cards.length - Math.floor(slider.offsetWidth / cardWidth);
-    if (currentIndex > newMaxIndex) {
-      currentIndex = newMaxIndex;
-    }
-    updateSlider();
-  });
-});
-
-
-</script>
+     // Responsive breakpoints
+     breakpoints: {
+     0: {
+         slidesPerView: 1
+     },
+     768: {
+         slidesPerView: 2
+     },
+     1024: {
+         slidesPerView: 3
+     }
+     }
+ });
+ </script>
 
 </body>
 </html>
