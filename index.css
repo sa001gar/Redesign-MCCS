@@ -3,7 +3,7 @@
 
 /* Root Colors  */
 :root {
-  --primary: #8d0486;
+  --primary: #044b8d;
   --primary-dark: #1e40af;
   --primary-light: #3b82f6;
   --accent: #f59e0b;
@@ -354,7 +354,8 @@ body {
   display: flex;
   align-items: center;
   border-top: 1px solid #a4929d;
-  background: linear-gradient(to right, #8d0486, #e95783);
+  /* background: linear-gradient(to right, #8d0486, #e95783); */
+  background: linear-gradient(to right, #044b8d, #5761e9);
   color: white;
   overflow: hidden;
 }
@@ -469,7 +470,7 @@ body {
 
 .notice-board {
   flex: 1;
-  background: linear-gradient(135deg, #8d0486, #e95783);
+  background: linear-gradient(to right, #044b8d, #5761e9);
   border-radius: 10px;
   padding: 20px;
   color: white;
@@ -505,7 +506,7 @@ body {
 }
 
 .welcome-section {
-  background: linear-gradient(135deg, #8d0486, #e95783);
+  background: linear-gradient(to right, #044b8d, #5761e9);
   color: white;
   padding: 30px;
   border-radius: 10px;

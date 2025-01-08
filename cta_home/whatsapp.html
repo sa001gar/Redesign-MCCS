@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Department</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .headline {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtext {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #b0c4de;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .cta-button.phone {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .cta-button.phone:hover {
+            background-color: #1d6f9a;
+        }
+
+        .cta-button.whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .cta-button.whatsapp:hover {
+            background-color: #1ba855;
+        }
+
+        .icon {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="headline">Get Early Access to Our Department</div>
+        <div class="subtext">For contact, call us today or connect via WhatsApp</div>
+        <div class="button-container">
+            <a href="tel:+1234567890" class="cta-button phone">
+                <img src="https://img.icons8.com/ios-glyphs/30/ffffff/phone.png" class="icon" alt="Phone icon"/>
+                Call Us Today
+            </a>
+            <a href="https://wa.me/1234567890" class="cta-button whatsapp">
+                <img src="https://img.icons8.com/ios-glyphs/30/ffffff/whatsapp.png" class="icon" alt="WhatsApp icon"/>
+                Join to WhatsApp
+            </a>
+        </div>
+    </div>
+</body>
+</html>
