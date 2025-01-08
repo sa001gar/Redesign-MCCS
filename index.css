@@ -3,7 +3,10 @@
 
 /* Root Colors  */
 :root {
-  --primary: #044b8d;
+  --primary: #1a237e;
+  --secondary:#7757e9;
+  /* --secondary:#534bae; */
+  --gradient:linear-gradient(to right, var(--primary), var(--secondary));
   --accent: #f59e0b;
   --text-light: #ffffff;
   --text-dark: #111827;
@@ -15,7 +18,7 @@
     0 4px 6px -4px rgb(0 0 0 / 0.1);
   --whatsapp: #059138;
   --whatsapp-hover: #128c7e;
-  --social-links-bg-color:rgba(255, 255, 255, 0.1);
+  --social-links-bg:rgba(255, 255, 255, 0.1);
  
 }
 
@@ -24,6 +27,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -37,12 +41,12 @@ body {
   /* position: sticky; */
   /* top: 0; */
   z-index: 50;
-  background: var(--background);
+  background: var(--gradient);
   box-shadow: var(--shadow);
 }
 
 .main-header {
-  background: var(--primary);
+  background: var(--gradient);
   padding: 1rem;
   color: var(--text-light);
 }
@@ -98,7 +102,7 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--social-links-bg-color);
+  background: var(--social-links-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -272,7 +276,7 @@ body {
     right: -100%;
     width: 300px;
     height: 100vh;
-    background: var(--primary);
+    background: var(--gradient);
     transition: right 0.3s ease;
     z-index: 50;
     overflow-y: auto;
@@ -354,14 +358,14 @@ body {
   align-items: center;
   border-top: 1px solid #a4929d;
   /* background: linear-gradient(to right, #8d0486, #e95783); */
-  background: linear-gradient(to right, #044b8d, #5761e9);
+  background: var(--gradient);
   color: white;
   overflow: hidden;
 }
 
 .highlight-label {
-  background-color: #ef4136; /*Red*/
-  padding: 10px 15px;
+  background-color: #e6483d; /*Red*/
+  padding: 10px 30px;
   font-weight: bold;
   color: white;
   text-transform: uppercase;
@@ -372,6 +376,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
+  
 }
 
 .scroll-content {
@@ -469,7 +474,7 @@ body {
 
 .notice-board {
   flex: 1;
-  background: linear-gradient(to right, #044b8d, #5761e9);
+  background: var(--gradient);
   border-radius: 10px;
   padding: 20px;
   color: white;
@@ -495,9 +500,17 @@ body {
 }
 
 .notice-item {
+  text-decoration: none;
+  display: block;
+  color: white;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
+}
+.notice-item:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+  
 }
 
 .notice-item:last-child {
@@ -505,7 +518,7 @@ body {
 }
 
 .welcome-section {
-  background: linear-gradient(to right, #044b8d, #5761e9);
+  background: var(--gradient);
   color: white;
   padding: 30px;
   border-radius: 10px;
@@ -552,7 +565,7 @@ body {
 }
 
 .hod-message h2 {
-  color: #8d0486;
+  color: var(--primary);
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -565,12 +578,26 @@ body {
   margin-bottom: 20px;
 }
 
+
+
 .hod-image {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 50%; 
   object-fit: cover;
-  border: 5px solid #e95783;
+  background: var(--gradient); /* Gradient for the border */
+  padding: 5px; 
+  display: inline-block;
+  position: relative;
+}
+
+.hod-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; 
+  object-fit: cover;
+  background: #fff; 
+ 
 }
 
 .message-content blockquote {
@@ -583,7 +610,7 @@ body {
 
 .hod-name {
   font-weight: bold;
-  color: #8d0486;
+  color: var(--text-dark);
 }
 
 @media (max-width: 768px) {
@@ -634,7 +661,7 @@ body {
   background: linear-gradient(
     135deg,
     rgba(var(--primary), 0.95) 0%,
-    rgba(var(--primary), 0.85) 100%
+    rgba(var(--secondary), 0.85) 100%
   );
   backdrop-filter: blur(5px);
 }
@@ -853,7 +880,7 @@ body {
   position: absolute;
   height: 40%;
   width: 100%;
-  background: var(--primary);
+  background: var(--gradient);
   border-radius: 20px 20px 0 0;
 }
 
@@ -870,8 +897,7 @@ body {
   height: 140px;
   width: 140px;
   border-radius: 50%;
-  padding: 3px;
-  background: var(--primary);
+  
 }
 
 .alumni_image img {
@@ -879,7 +905,7 @@ body {
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 3px solid #ffffff;
 }
 
 .alumni_media_icons {
@@ -931,7 +957,7 @@ body {
 }
 
 .alumni_button button {
-  background: var(--primary);
+  background: var(--gradient);
   outline: none;
   border: none;
   color: #fff;
@@ -944,6 +970,7 @@ body {
 
 .alumni_button button:hover {
   /* background: var(--primary-dark); */
+  background: var(--secondary);
 }
 
 .alumni_swiper_pagination {

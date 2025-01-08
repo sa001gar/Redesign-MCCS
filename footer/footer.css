@@ -1,9 +1,9 @@
 :root {
     --primary-dark: #1a237e;
     --primary-light: #534bae;
-    --accent: #ffd700;
-    --text-light: #ffffff;
-    --text-muted: #fee6ff;
+    --accent: #ffd700!important;
+    --text-light: #ffffff!important;
+    --text-muted: #fee6ff!important;
 }
 
 * {
@@ -14,9 +14,9 @@
 }
 
 .footer {
-    /* background: linear-gradient(135deg, var(--primary-dark), var(--primary-light)); */
-    background: linear-gradient(to right, #8d0486, #e95783);
-    color: var(--text-light);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    /* background: linear-gradient(to right, #8d0486, #e95783); */
+    color: var(--text-light)!important;
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
@@ -79,7 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-light);
+    color: var(--text-light)!important;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -114,7 +114,7 @@
 }
 
 .useful-links a:hover {
-    color: var(--text-light);
+    color: var(--text-light)!important;
     transform: translateX(5px);
 }
 

@@ -87,8 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const navbar = document.querySelector(".navbar");
-  const navbarOffsetTop = navbar.offsetTop;
+  let navbar = document.querySelector(".navbar");
+  let navbarOffsetTop = navbar.offsetTop;
+  
 
   window.addEventListener("scroll", function () {
     if (window.scrollY >= navbarOffsetTop) {
@@ -97,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.remove("fixed");
     }
   });
+
+  
 });
 
 
