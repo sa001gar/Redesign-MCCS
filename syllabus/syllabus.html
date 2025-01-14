@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Syllabus Viewer</title>
+    <link rel="stylesheet" href="syllabus.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js"></script>
+</head>
+<body>
+    <div class="book-container">
+        <div class="navigation">
+            <select id="year-select">
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+            <select id="semester-select">
+                <option value="1">1st Semester</option>
+                <option value="2">2nd Semester</option>
+            </select>
+            <button id="download-pdf">Download PDF</button>
+        </div>
+        <div id="pdf-viewer">
+            <div id="page-left" class="page"></div>
+            <div id="page-right" class="page"></div>
+        </div>
+        <div class="controls">
+            <button id="prev-page">Previous</button>
+            <span id="page-num"></span>
+            <button id="next-page">Next</button>
+            <div class="zoom-controls">
+                <button id="zoom-out">-</button>
+                <span id="zoom-level">100%</span>
+                <button id="zoom-in">+</button>
+            </div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+</body>
+</html>
+

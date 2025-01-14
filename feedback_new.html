@@ -6,6 +6,27 @@
     <title>Contact Us</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1a237e;
+            --secondary:#7757e9;
+            /* --secondary:#534bae; */
+            --gradient:linear-gradient(to right, var(--primary), var(--secondary));
+            --accent: #f59e0b;
+            --text-light: #ffffff;
+            --text-dark: #111827;
+            --text-muted: #6b7280;
+            --background: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+                0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --whatsapp: #059138;
+            --whatsapp-hover: #128c7e;
+            --social-links-bg:rgba(255, 255, 255, 0.1);
+            
+        }
+
+        
         * {
             margin: 0;
             padding: 0;
@@ -18,7 +39,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
         }
 
         .container {
@@ -74,7 +95,7 @@
 
         input:focus, textarea:focus {
             outline: none;
-            border-color: #ff758c;
+            border-color: var(--primary);
             background: white;
         }
 
@@ -86,7 +107,7 @@
         button {
             width: 100%;
             padding: 1rem;
-            background: #ff758c;
+            background:linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             border: none;
             border-radius: 8px;
@@ -96,7 +117,7 @@
         }
 
         button:hover {
-            background: #ff7eb3;
+            background: var(--primary);
         }
 
         .social-links {
