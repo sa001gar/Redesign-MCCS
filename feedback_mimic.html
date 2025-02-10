@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #7757e9;
+            --accent: #f59e0b;
+            --text-light: #ffffff;
+            --text-dark: #111827;
+            --text-muted: #6b7280;
+            --background: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .progress-bar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-step {
+            flex: 1;
+            height: 4px;
+            background: #e0e0e0;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f8f8f8;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .facebook { background: #3b5998; }
+        .twitter { background: #000000; }
+        .instagram { 
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+        .linkedin { background: #0077b5; }
+        .github { background: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Student Feedback Form</h1>
+        <div class="progress-bar">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+
+        <form id="studentFeedbackForm">
+            <!-- Personal Details Step -->
+            <div class="form-step active" id="step1">
+                <div class="form-group">
+                    <input type="text" placeholder="Name of the Student" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Class/Section" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Academic Year</option>
+                        <option>2023-2024</option>
+                        <option>2022-2023</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Semester</option>
+                        <option>1st Semester</option>
+                        <option>2nd Semester</option>
+                        <option>3rd Semester</option>
+                        <option>4th Semester</option>
+                    </select>
+                </div>
+                <div class="navigation-buttons">
+                    <button type="button" class="btn next-btn">Next →</button>
+                </div>
+            </div>
+
+            <!-- Feedback Questions Step 1 -->
+            <div class="form-step" id="step2">
+                <div class="form-group">
+                    <select required>
+                        <option value="">How do you rate the course content?</option>
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Average</option>
+                        <option>Poor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Are the learning objectives clear?</option>
+                        <option>Strongly Agree</option>
+                        <option>Agree</option>
+                        <option>Neutral</option>
+                        <option>Disagree</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">How effective are the teaching methods?</option>
+                        <option>Very Effective</option>
+                        <option>Effective</option>
+                        <option>Somewhat Effective</option>
+                        <option>Not Effective</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Rate the course difficulty level</option>
+                        <option>Too Difficult</option>
+                        <option>Moderately Difficult</option>
+                        <option>Just Right</option>
+                        <option>Too Easy</option>
+                    </select>
+                </div>
+                <div class="navigation-buttons">
+                    <button type="button" class="btn btn-secondary prev-btn">← Previous</button>
+                    <button type="button" class="btn next-btn">Next →</button>
+                </div>
+            </div>
+
+            <!-- Feedback Questions Step 2 -->
+            <div class="form-step" id="step3">
+                <div class="form-group">
+                    <select required>
+                        <option value="">Course resources rating</option>
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Average</option>
+                        <option>Poor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Lab/practical sessions helpfulness</option>
+                        <option>Very Helpful</option>
+                        <option>Helpful</option>
+                        <option>Somewhat Helpful</option>
+                        <option>Not Helpful</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Rate the course assignments</option>
+                        <option>Very Challenging</option>
+                        <option>Challenging</option>
+                        <option>Moderate</option>
+                        <option>Easy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">How would you improve the course?</option>
+                        <option>More Practical Sessions</option>
+                        <option>Better Study Materials</option>
+                        <option>More Interactive Classes</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="navigation-buttons">
+                    <button type="button" class="btn btn-secondary prev-btn">← Previous</button>
+                    <button type="button" class="btn next-btn">Next →</button>
+                </div>
+            </div>
+
+            <!-- Final Comments Step -->
+            <div class="form-step" id="step4">
+                <div class="form-group">
+                    <textarea placeholder="Additional Comments/Suggestions" required></textarea>
+                </div>
+                <div class="navigation-buttons">
+                    <button type="button" class="btn btn-secondary prev-btn">← Previous</button>
+                    <button type="submit" class="btn">Submit →</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('studentFeedbackForm');
+            const steps = document.querySelectorAll('.form-step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            let currentStep = 0;
+
+            function showStep(stepIndex) {
+                steps.forEach((step, index) => {
+                    step.classList.toggle('active', index === stepIndex);
+                    progressSteps[index].classList.toggle('active', index <= stepIndex);
+                });
+            }
+
+            document.querySelectorAll('.next-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const currentStepElement = steps[currentStep];
+                    const inputs = currentStepElement.querySelectorAll('input, select, textarea');
+                    let isValid = true;
+
+                    inputs.forEach(input => {
+                        if (!input.value) {
+                            isValid = false;
+                            input.style.borderColor = 'red';
+                        } else {
+                            input.style.borderColor = '#ddd';
+                        }
+                    });
+
+                    if (isValid && currentStep < steps.length - 1) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.prev-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (currentStep > 0) {
+                        currentStep--;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Feedback submitted successfully!');
+            });
+        });
+    </script>
+</body>
+</html>
