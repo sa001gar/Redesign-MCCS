@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/header/header.css">
+    <link rel="stylesheet" href="/footer/footer.css">
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #7757e9;
+            --accent: #f59e0b;
+            --text-light: #ffffff;
+            --text-dark: #111827;
+            --text-muted: #6b7280;
+            --background: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .feedback-section {
+            min-height: calc(100vh - 300px);
+            /* Adjust based on header & footer height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .progress-bar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-step {
+            flex: 1;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            transition: background 0.3s ease;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #f8f8f8;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.875rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 0.75rem;
+            }
+        }
+
+        /* Override header/footer specific styles if needed */
+        .header {
+            position: relative;
+            z-index: 20;
+        }
+
+        .footer {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="main-header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="image.png" alt="College Logo">
+                    <div class="college-name">
+                        <h1>DEPARTMENT OF COMPUTER SCIENCE</h1>
+                        <p>Residing Mankar College | Affiliated to Burdwan University | NAAC Accredited</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="header-social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p><strong>CALL US</strong>: (0343)-2501353, 2504106</p>
+                    <p>Mob: +91-0000000000 | Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                            data-cfemail="ee87808881ae89838f8782c08d8183">[email&#160;protected]</a></p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <h2>DEPARTMENT OF<br>COMPUTER SCIENCE</h2>
+                    <button class="menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="nav-wrapper">
+                    <button class="close-menu" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                About
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#mission">Our Mission</a></li>
+                                <li><a href="#team">Our Team</a></li>
+                                <li><a href="#history">History</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#faculty">Faculty</a></li>
+                        <li class="nav-item"><a href="#alumni">Alumni</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Academics
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#materials">Study Materials</a></li>
+                                <li><a href="#questions">Previous Year Questions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Activities
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#projects">Social Projects</a></li>
+                                <li><a href="#magazine">Annual Magazine</a></li>
+                                <li><a href="#creativity">Students Creativity</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#gallery">Gallery</a></li>
+                        <li class="nav-item"><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="feedback-section">
+        <div class="container">
+            <h1>Student Feedback Form</h1>
+            <div class="progress-bar">
+                <div class="progress-step active"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+            </div>
+
+            <form id="studentFeedbackForm">
+                <!-- Personal Details Step -->
+                <div class="form-step active" id="step1">
+                    <div class="form-group">
+                        <input type="text" placeholder="Name of the Student" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Class/Section" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Academic Year</option>
+                            <option>2023-2024</option>
+                            <option>2022-2023</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Semester</option>
+                            <option>1st Semester</option>
+                            <option>2nd Semester</option>
+                            <option>3rd Semester</option>
+                            <option>4th Semester</option>
+                        </select>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button type="button" class="btn next-btn">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Feedback Questions Step 1 -->
+                <div class="form-step" id="step2">
+                    <div class="form-group">
+                        <select required>
+                            <option value="">How do you rate the course content?</option>
+                            <option>Excellent</option>
+                            <option>Good</option>
+                            <option>Average</option>
+                            <option>Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Are the learning objectives clear?</option>
+                            <option>Strongly Agree</option>
+                            <option>Agree</option>
+                            <option>Neutral</option>
+                            <option>Disagree</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">How effective are the teaching methods?</option>
+                            <option>Very Effective</option>
+                            <option>Effective</option>
+                            <option>Somewhat Effective</option>
+                            <option>Not Effective</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Rate the course difficulty level</option>
+                            <option>Too Difficult</option>
+                            <option>Moderately Difficult</option>
+                            <option>Just Right</option>
+                            <option>Too Easy</option>
+                        </select>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button type="button" class="btn btn-secondary prev-btn">← Previous</button>
+                        <button type="button" class="btn next-btn">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Feedback Questions Step 2 -->
+                <div class="form-step" id="step3">
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Course resources rating</option>
+                            <option>Excellent</option>
+                            <option>Good</option>
+                            <option>Average</option>
+                            <option>Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Lab/practical sessions helpfulness</option>
+                            <option>Very Helpful</option>
+                            <option>Helpful</option>
+                            <option>Somewhat Helpful</option>
+                            <option>Not Helpful</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Rate the course assignments</option>
+                            <option>Very Challenging</option>
+                            <option>Challenging</option>
+                            <option>Moderate</option>
+                            <option>Easy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">How would you improve the course?</option>
+                            <option>More Practical Sessions</option>
+                            <option>Better Study Materials</option>
+                            <option>More Interactive Classes</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button type="button" class="btn btn-secondary prev-btn">← Previous</button>
+                        <button type="button" class="btn next-btn">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Final Comments Step -->
+                <div class="form-step" id="step4">
+                    <div class="form-group">
+                        <textarea placeholder="Additional Comments/Suggestions" required></textarea>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button type="button" class="btn btn-secondary prev-btn">← Previous</button>
+                        <button type="submit" class="btn">Submit →</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section department-info">
+                <h2>Computer Science</h2>
+                <p>The department has played a key role in making it one of the best in the University, known not only
+                    for its placement assistance but also for its focus on student-centric learning. The students of
+                    this department are working in India and abroad with reputed MNCs like TCS, CTS, Wipro, IBM etc and
+                    in different government organisations, Banks and PSUs.</p>
+                <div class="footer-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section useful-links">
+                <h2>Useful Links</h2>
+                <ul>
+                    <li><a href="#">Alumni</a></li>
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">Study Material</a></li>
+                    <li><a href="#">Question Bank</a></li>
+                    <li><a href="#">Student FeedBack</a></li>
+                    <li><a href="#">Department Gallery</a></li>
+                    <li><a href="#">Mankar College</a></li>
+                    <li><a href="#">University of Burdwan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-info">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-phone"></i> Phone: +91 9475929208 | 8967857658</p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                        data-cfemail="117a7a7c3f7f786575766151767c70787d3f727e7c">[email&#160;protected]</a></p>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.5375831776897!2d87.2898!3d23.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f71f0d6c917977%3A0x91f1f5f88c6e5d4a!2sMankar%20College!5e0!3m2!1sen!2sin!4v1629789012345!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Department of Computer Science | Developed by CS-Team</p>
+        </div>
+    </footer>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="/header/header.js"></script>
+    <script>
+        // JavaScript for feedback form
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('studentFeedbackForm');
+            const steps = document.querySelectorAll('.form-step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            let currentStep = 0;
+
+            function showStep(stepIndex) {
+                steps.forEach((step, index) => {
+                    step.classList.toggle('active', index === stepIndex);
+                    progressSteps[index].classList.toggle('active', index <= stepIndex);
+                });
+            }
+
+            document.querySelectorAll('.next-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const currentStepElement = steps[currentStep];
+                    const inputs = currentStepElement.querySelectorAll('input, select, textarea');
+                    let isValid = true;
+
+                    inputs.forEach(input => {
+                        if (!input.value) {
+                            isValid = false;
+                            input.style.borderColor = 'red';
+                        } else {
+                            input.style.borderColor = '#ddd';
+                        }
+                    });
+
+                    if (isValid && currentStep < steps.length - 1) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.prev-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (currentStep > 0) {
+                        currentStep--;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Feedback submitted successfully!');
+            });
+        });
+    </script>
+</body>
+
+</html>
