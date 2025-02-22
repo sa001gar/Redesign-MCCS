@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus - Department of Computer Science</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/header/header.css">
+    <link rel="stylesheet" href="/footer/footer.css">
+    <!-- PDF.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #7757e9;
+            --accent: #f59e0b;
+            --text-light: #ffffff;
+            --text-dark: #111827;
+            --text-muted: #6b7280;
+            --background: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        .syllabus-section {
+            min-height: calc(100vh - 300px);
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .syllabus-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .syllabus-header {
+            padding: 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .syllabus-header h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .syllabus-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .syllabus-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 600px;
+        }
+
+        .syllabus-sidebar {
+            background: #f8fafc;
+            border-right: 1px solid var(--border);
+            padding: 1.5rem;
+        }
+
+        .semester-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .semester-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .semester-button {
+            width: 100%;
+            padding: 1rem;
+            text-align: left;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .semester-button:hover {
+            background: #f1f5f9;
+            border-color: var(--primary);
+        }
+
+        .semester-button.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .semester-button i {
+            font-size: 1.25rem;
+        }
+
+        .pdf-viewer {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pdf-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .pdf-controls button {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .pdf-controls button:hover {
+            background: #f1f5f9;
+            border-color: var(--primary);
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 800px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .syllabus-content {
+                grid-template-columns: 1fr;
+            }
+
+            .syllabus-sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .pdf-container {
+                height: 600px;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Download button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .download-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="main-header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="image.png" alt="College Logo">
+                    <div class="college-name">
+                        <h1>DEPARTMENT OF COMPUTER SCIENCE</h1>
+                        <p>Residing Mankar College | Affiliated to Burdwan University | NAAC Accredited</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="header-social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p><strong>CALL US</strong>: (0343)-2501353, 2504106</p>
+                    <p>Mob: +91-0000000000 | Email: info@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <h2>DEPARTMENT OF<br>COMPUTER SCIENCE</h2>
+                    <button class="menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="nav-wrapper">
+                    <button class="close-menu" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                About
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#mission">Our Mission</a></li>
+                                <li><a href="#team">Our Team</a></li>
+                                <li><a href="#history">History</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#faculty">Faculty</a></li>
+                        <li class="nav-item"><a href="#alumni">Alumni</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Academics
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#materials">Study Materials</a></li>
+                                <li><a href="#questions">Previous Year Questions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Activities
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#projects">Social Projects</a></li>
+                                <li><a href="#magazine">Annual Magazine</a></li>
+                                <li><a href="#creativity">Students Creativity</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#gallery">Gallery</a></li>
+                        <li class="nav-item"><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Syllabus Section -->
+
+    <section class="syllabus-section">
+        <div class="syllabus-container">
+            <div class="syllabus-header">
+                <h1>Course Syllabus</h1>
+                <p>Access the detailed syllabus for each semester of the Computer Science program. Click on a semester
+                    to view or download the corresponding syllabus.</p>
+            </div>
+
+            <div class="syllabus-content">
+                <div class="syllabus-sidebar">
+                    <ul class="semester-list">
+                        <li class="semester-item">
+                            <button class="semester-button active" data-pdf="/syllabi/semester1.pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                1st Semester
+                            </button>
+                        </li>
+                        <li class="semester-item">
+                            <button class="semester-button" data-pdf="/syllabi/semester2.pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                2nd Semester
+                            </button>
+                        </li>
+                        <li class="semester-item">
+                            <button class="semester-button" data-pdf="/syllabi/semester3.pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                3rd Semester
+                            </button>
+                        </li>
+                        <li class="semester-item">
+                            <button class="semester-button" data-pdf="/syllabi/semester4.pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                4th Semester
+                            </button>
+                        </li>
+                        <li class="semester-item">
+                            <button class="semester-button" data-pdf="/syllabi/semester5.pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                5th Semester
+                            </button>
+                        </li>
+                        <li class="semester-item">
+                            <button class="semester-button" data-pdf="/syllabi/semester6.pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                6th Semester
+                            </button>
+                        </li>
+                        <li class="semester-item">
+                            <button class="semester-button" data-pdf="/syllabi/semester6.pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                7th Semester
+                            </button>
+                        </li>
+                        <li class="semester-item">
+                            <button class="semester-button" data-pdf="/syllabi/semester6.pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                8th Semester
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pdf-viewer">
+                    <div class="pdf-controls">
+                        <button id="prev-page">
+                            <i class="fas fa-chevron-left"></i>
+                            Previous
+                        </button>
+                        <button id="next-page">
+                            Next
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <span id="page-info">Page: 1 / 1</span>
+                    </div>
+
+                    <div class="pdf-container">
+                        <iframe id="pdf-frame" src="about:blank"></iframe>
+                    </div>
+
+                    <a href="#" class="download-btn" id="download-pdf">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section department-info">
+                <h2>Computer Science</h2>
+                <p>The department has played a key role in making it one of the best in the University, known not only
+                    for its placement assistance but also for its focus on student-centric learning. The students of
+                    this department are working in India and abroad with reputed MNCs like TCS, CTS, Wipro, IBM etc and
+                    in different government organisations, Banks and PSUs.</p>
+                <div class="footer-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section useful-links">
+                <h2>Useful Links</h2>
+                <ul>
+                    <li><a href="#">Alumni</a></li>
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">Study Material</a></li>
+                    <li><a href="#">Question Bank</a></li>
+                    <li><a href="#">Student FeedBack</a></li>
+                    <li><a href="#">Department Gallery</a></li>
+                    <li><a href="#">Mankar College</a></li>
+                    <li><a href="#">University of Burdwan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-info">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-phone"></i> Phone: +91 9475929208 | 8967857658</p>
+                <p><i class="fas fa-envelope"></i> Email: kkm.nitdgp@gmail.com</p>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.5375831776897!2d87.2898!3d23.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f71f0d6c917977%3A0x91f1f5f88c6e5d4a!2sMankar%20College!5e0!3m2!1sen!2sin!4v1629789012345!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Department of Computer Science | Developed by CS-Team</p>
+        </div>
+    </footer>
+
+    <!-- javascript for syllabus page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const semesterButtons = document.querySelectorAll('.semester-button');
+            const pdfFrame = document.getElementById('pdf-frame');
+            const downloadBtn = document.getElementById('download-pdf');
+            let currentPdfUrl = '';
+
+            // Function to load PDF
+            function loadPdf(url) {
+                currentPdfUrl = url;
+                // Using Google Docs Viewer as a fallback PDF viewer
+                pdfFrame.src = `https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true`;
+                downloadBtn.href = url;
+            }
+
+            // Initialize with first semester PDF
+            loadPdf(semesterButtons[0].dataset.pdf);
+
+            // Handle semester button clicks
+            semesterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active state
+                    semesterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Load PDF
+                    loadPdf(button.dataset.pdf);
+                });
+            });
+
+            // Handle PDF navigation
+            const prevButton = document.getElementById('prev-page');
+            const nextButton = document.getElementById('next-page');
+            const pageInfo = document.getElementById('page-info');
+
+            // Basic PDF.js navigation
+            let currentPage = 1;
+            let numPages = 1;
+
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updatePage();
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentPage < numPages) {
+                    currentPage++;
+                    updatePage();
+                }
+            });
+
+            function updatePage() {
+                pageInfo.textContent = `Page: ${currentPage} / ${numPages}`;
+            }
+        });
+    </script>
+    <script src="header.js"></script>
+</body>
+
+</html>
