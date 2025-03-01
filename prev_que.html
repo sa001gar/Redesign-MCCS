@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Year Question Papers - Department of Computer Science</title>
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="header/header.css">
+    <link rel="stylesheet" href="footer/footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f7;">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="main-header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="image.png" alt="College Logo">
+                    <div class="college-name">
+                        <h1>DEPARTMENT OF COMPUTER SCIENCE</h1>
+                        <p>Residing Mankar College | Affiliated to Burdwan University | NAAC Accredited</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="header-social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p><strong>CALL US</strong>: (0343)-2501353, 2504106</p>
+                    <p>Mob: +91-0000000000 | Email: info@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <h2>DEPARTMENT OF<br>COMPUTER SCIENCE</h2>
+                    <button class="menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="nav-wrapper">
+                    <button class="close-menu" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                About
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#mission">Our Mission</a></li>
+                                <li><a href="#team">Our Team</a></li>
+                                <li><a href="#history">History</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#faculty">Faculty</a></li>
+                        <li class="nav-item"><a href="#alumni">Alumni</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Academics
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#materials">Study Materials</a></li>
+                                <li><a href="#questions">Previous Year Questions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Activities
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#projects">Social Projects</a></li>
+                                <li><a href="#magazine">Annual Magazine</a></li>
+                                <li><a href="#creativity">Students Creativity</a></li> 
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#gallery">Gallery</a></li>
+                        <li class="nav-item"><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 20px; max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <!-- Left Content - Question Papers Section -->
+            <div style="flex: 1; min-width: 300px;">
+                <div style="background-color: #3f3d9e; color: white; padding: 15px; border-radius: 5px 5px 0 0;">
+                    <h2 style="margin: 0; font-size: 24px; text-align: center;">Previous Year Question Papers</h2>
+                </div>
+                
+                <div style="background-color: white; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <!-- Semester Selection -->
+                    <div style="margin-bottom: 20px;">
+                        <label for="semester" style="display: block; margin-bottom: 8px; font-weight: bold;">Select Semester:</label>
+                        <select id="semester" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9;">
+                            <option value="">-- Select Semester --</option>
+                            <option value="sem1">Semester 1</option>
+                            <option value="sem2">Semester 2</option>
+                            <option value="sem3">Semester 3</option>
+                            <option value="sem4">Semester 4</option>
+                            <option value="sem5">Semester 5</option>
+                            <option value="sem6">Semester 6</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Year Selection -->
+                    <div style="margin-bottom: 20px;">
+                        <label for="year" style="display: block; margin-bottom: 8px; font-weight: bold;">Select Year:</label>
+                        <select id="year" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; background-color: #f9f9f9;">
+                            <option value="">-- Select Year --</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Question Papers List -->
+                    <div id="papers-list" style="margin-top: 30px;">
+                        <h3 style="border-bottom: 2px solid #3f3d9e; padding-bottom: 10px; color: #3f3d9e;">Available Question Papers</h3>
+                        
+                        <div style="margin-top: 15px;">
+                            <!-- Paper Item -->
+                            <div style="background-color: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0 0 5px 0; color: #333;">Data Structures (CC-3)</h4>
+                                    <p style="margin: 0; font-size: 14px; color: #666;">Semester 3 • 2022</p>
+                                </div>
+                                <a href="#" style="background-color: #3f3d9e; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center;">
+                                    <i class="fas fa-download" style="margin-right: 5px;"></i> Download
+                                </a>
+                            </div>
+                            
+                            <!-- Paper Item -->
+                            <div style="background-color: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0 0 5px 0; color: #333;">Database Management Systems (CC-5)</h4>
+                                    <p style="margin: 0; font-size: 14px; color: #666;">Semester 3 • 2022</p>
+                                </div>
+                                <a href="#" style="background-color: #3f3d9e; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center;">
+                                    <i class="fas fa-download" style="margin-right: 5px;"></i> Download
+                                </a>
+                            </div>
+                            
+                            <!-- Paper Item -->
+                            <div style="background-color: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0 0 5px 0; color: #333;">Operating Systems (CC-4)</h4>
+                                    <p style="margin: 0; font-size: 14px; color: #666;">Semester 3 • 2022</p>
+                                </div>
+                                <a href="#" style="background-color: #3f3d9e; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center;">
+                                    <i class="fas fa-download" style="margin-right: 5px;"></i> Download
+                                </a>
+                            </div>
+                            
+                            <!-- Paper Item -->
+                            <div style="background-color: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0 0 5px 0; color: #333;">Computer Networks (CC-8)</h4>
+                                    <p style="margin: 0; font-size: 14px; color: #666;">Semester 4 • 2022</p>
+                                </div>
+                                <a href="#" style="background-color: #3f3d9e; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center;">
+                                    <i class="fas fa-download" style="margin-right: 5px;"></i> Download
+                                </a>
+                            </div>
+                            
+                            <!-- Paper Item -->
+                            <div style="background-color: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0 0 5px 0; color: #333;">Design and Analysis of Algorithms (CC-7)</h4>
+                                    <p style="margin: 0; font-size: 14px; color: #666;">Semester 4 • 2022</p>
+                                </div>
+                                <a href="#" style="background-color: #3f3d9e; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center;">
+                                    <i class="fas fa-download" style="margin-right: 5px;"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section department-info">
+                <h2>Computer Science</h2>
+                <p>The department has played a key role in making it one of the best in the University, known not only for its placement assistance but also for its focus on student-centric learning. The students of this department are working in India and abroad with reputed MNCs like TCS, CTS, Wipro, IBM etc and in different government organisations, Banks and PSUs.</p>
+                <div class="footer-social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section useful-links">
+                <h2>Useful Links</h2>
+                <ul>
+                    <li><a href="#">Alumni</a></li>
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">Study Material</a></li>
+                    <li><a href="#">Question Bank</a></li>
+                    <li><a href="#">Student FeedBack</a></li>
+                    <li><a href="#">Department Gallery</a></li>
+                    <li><a href="#">Mankar College</a></li>
+                    <li><a href="#">University of Burdwan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-info">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-phone"></i> Phone: +91 9475929208 | 8967857658</p>
+                <p><i class="fas fa-envelope"></i> Email: info@gmail.com</p>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.5375831776897!2d87.2898!3d23.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f71f0d6c917977%3A0x91f1f5f88c6e5d4a!2sMankar%20College!5e0!3m2!1sen!2sin!4v1629789012345!5m2!1sen!2sin"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Department of Computer Science | Developed by CS-Team</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="header/header.js"></script>
+
+</body>
+</html>
