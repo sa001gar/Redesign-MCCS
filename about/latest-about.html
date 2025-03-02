@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department - About Us</title>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Department Name</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="programs.html">Programs</a>
+            <a href="research.html">Research</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="decorative-elements">
+            <div class="star"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">About Us</h1>
+                <p class="hero-description">Dedicated to excellence in education, research, and innovation in our field.</p>
+            </div>
+            <div class="image-gallery">
+                <div class="gallery-image">
+                    <img src="{% static 'media/images/about/image2.jpg' %}" alt="Department collaboration">
+                    <div class="overlay">
+                        <span>Collaborative Learning</span>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <img src="{% static 'media/images/about/image3.jpg' %}" alt="Research">
+                    <div class="overlay">
+                        <span>Advanced Research</span>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <img src="{% static 'media/images/about/image4.jpg' %}" alt="Student projects">
+                    <div class="overlay">
+                        <span>Student Projects</span>
+                    </div>
+                </div>
+                <div class="gallery-image">
+                    <img src="{% static 'media/images/about/image3.jpg' %}" alt="Faculty">
+                    <div class="overlay">
+                        <span>Expert Faculty</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down" id="scrollDown">
+            <span>Learn More</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="content-title">We ensure excellence in education and research</h2>
+            <div class="content-grid">
+                <div>
+                    <p>Our department is committed to providing a comprehensive education that prepares students for successful careers in the field. We emphasize both theoretical knowledge and practical application to ensure our graduates are well-equipped for the challenges of the professional world.</p>
+                    <p>With state-of-the-art facilities and dedicated faculty members, we foster an environment of innovation and academic excellence that encourages students to reach their full potential.</p>
+                </div>
+                <div>
+                    <p>Our research initiatives address real-world challenges and contribute to advancements in the field. We maintain strong connections with industry partners to ensure our curriculum remains relevant and our students have access to valuable networking and internship opportunities.</p>
+                    <p>We are proud of our diverse and inclusive community that brings together different perspectives and experiences to enrich the educational experience for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Highlights -->
+    <section class="highlights-section">
+        <div class="container">
+            <h2 class="section-title">Department Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Our programs are designed to provide comprehensive knowledge and skills necessary for success in the field.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Cutting-Edge Research</h3>
+                    <p>Our faculty and students engage in innovative research projects that address important challenges.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Supportive Community</h3>
+                    <p>We foster a collaborative environment where students and faculty work together on academic and research initiatives.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Industry Connections</h3>
+                    <p>Strong partnerships with industry leaders provide our students with valuable internship and career opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department History -->
+    <section class="history-section">
+        <div class="container">
+            <div class="history-content">
+                <h2 class="section-title">Our History</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>1985</h3>
+                            <p>Department established with the mission of providing quality education and research opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>1998</h3>
+                            <p>Introduction of graduate programs and expansion of research initiatives.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2005</h3>
+                            <p>Major facility renovation and implementation of state-of-the-art technology in classrooms and labs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2012</h3>
+                            <p>Establishment of key industry partnerships and launch of collaborative research initiatives.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2020</h3>
+                            <p>Integration of innovative teaching methodologies and expansion of online learning resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="history-image">
+                <img src="{% static 'media/images/about/history.jpg' %}" alt="Department history">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="500">0</div>
+                <div class="stat-label">Current Students</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="42">0</div>
+                <div class="stat-label">Faculty Members</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="25">0</div>
+                <div class="stat-label">Research Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="35">0</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Spotlight -->
+    <section class="faculty-spotlight">
+        <div class="container">
+            <h2 class="section-title">Faculty Spotlight</h2>
+            <div class="faculty-slider">
+                <div class="faculty-card">
+                    <div class="faculty-image">
+                        <img src="{% static 'media/images/faculty/faculty1.jpg' %}" alt="Faculty member">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Dr. Jane Smith</h3>
+                        <p class="faculty-position">Department Chair</p>
+                        <p class="faculty-specialization">Specialization: Advanced Research Methods</p>
+                        <p class="faculty-bio">Dr. Smith has over 20 years of experience in the field and has published numerous research papers in leading journals.</p>
+                        <a href="faculty-detail.html" class="faculty-link">View Profile</a>
+                    </div>
+                </div>
+                <div class="faculty-nav">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Our Department</h2>
+            <p>Discover the opportunities awaiting you in our programs.</p>
+            <div class="cta-buttons">
+                <a href="programs.html" class="cta-btn primary">Explore Programs</a>
+                <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">Department Name</div>
+                <p class="footer-about">Dedicated to excellence in education, research, and community engagement.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="research.html">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Student Portal</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">Academic Calendar</a></li>
+                    <li><a href="#">Career Services</a></li>
+                    <li><a href="#">Forms & Policies</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Contact</h3>
+                <p class="contact-info"><i class="fas fa-map-marker-alt"></i> 123 University Ave, City, State</p>
+                <p class="contact-info"><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p class="contact-info"><i class="fas fa-envelope"></i> department@university.edu</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Department Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe elements
+        document.querySelectorAll('.content-title, .content-grid, .section-title, .highlights-grid, .highlight-card, .timeline-item, .history-image, .stat-item, .faculty-card, .faculty-nav').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Scroll down button
+        const scrollDownBtn = document.getElementById('scrollDown');
+        if(scrollDownBtn) {
+            scrollDownBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: document.querySelector('.content-section').offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Animate stats counter
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        function animateStats() {
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000; // ms
+                const countTo = target;
+                let startTime = null;
+                
+                function updateCount(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    const value = Math.floor(progress * countTo);
+                    stat.textContent = value;
+                    
+                    if (progress < 1) {
+                        window.requestAnimationFrame(updateCount);
+                    } else {
+                        stat.textContent = countTo;
+                    }
+                }
+                
+                window.requestAnimationFrame(updateCount);
+            });
+        }
+
+        // Run animation when stats section is in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if(statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Faculty slider functionality
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.faculty-card');
+        
+        if(nextBtn && prevBtn && slides.length > 0) {
+            // Implementation would go here if we had multiple slides
+            // This is a placeholder for actual slider functionality
+        }
+    </script>
+</body>
+</html>
